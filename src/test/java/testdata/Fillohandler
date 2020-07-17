@@ -1,0 +1,44 @@
+package utilities;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+import com.codoid.products.exception.FilloException;
+import com.codoid.products.fillo.Connection;
+import com.codoid.products.fillo.Fillo;
+import com.codoid.products.fillo.Recordset;
+
+public class FilloExcelHandler {
+
+	public static Map<String, String> getData(String testDataFilePath)throws Throwable {
+
+		Map<String, String> TestData = new TreeMap<String, String>();
+
+		Fillo fillo = new Fillo();
+		Connection connection = null;
+		try {
+			 connection = fillo.getConnection(testDataFilePath);
+			String strQuary = "Select * from Sheet1";
+			Recordset rc = connection.executeQuery(strQuary);
+			while (rc.next()) {
+
+				for (String field : rc.getFieldNames()) {
+					TestData.put(field, rc.getField(field));
+				}
+				/*
+				 * System.out.println(rc.getField("username")); 
+				 username = rc.getField("username"); System.out.println(rc.getField("password"));
+				 *
+				 * password =rc.getField("password");
+				 */
+
+			}
+		} catch (FilloException e) {
+			e.printStackTrace();
+			throw new Exception("Test data can't find .. ");
+		}
+		// rc.close();
+		connection.close();
+		return TestData;
+	}
+}

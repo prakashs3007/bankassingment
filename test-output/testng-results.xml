@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="47265" started-at="2020-07-15T18:53:51 GMT+03:00" finished-at="2020-07-15T18:54:38 GMT+03:00">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="47265" started-at="2020-07-15T18:53:51 GMT+03:00" finished-at="2020-07-15T18:54:38 GMT+03:00">
+      <class name="com.assingement.java.Assingement">
+        <test-method status="PASS" signature="Demoqa()[pri:0, instance:com.assingement.java.Assingement@68bbe345]" name="Demoqa" duration-ms="47197" started-at="2020-07-15T18:53:51 GMT+03:00" finished-at="2020-07-15T18:54:38 GMT+03:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Demoqa -->
+      </class> <!-- com.assingement.java.Assingement -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
